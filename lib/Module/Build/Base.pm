@@ -454,7 +454,7 @@ sub _perl_is_same {
 # invoking the wrong perl.)
 sub _discover_perl_interpreter {
   my $proto = shift;
-  my $c     = ref($proto) ? $proto->{config} : 'Module::Build::Config';
+  my $c     = ref($proto) ? $proto->{config} : Module::Build::Config->new;
 
   my $perl  = $^X;
   my $perl_basename = File::Basename::basename($perl);
@@ -1005,7 +1005,7 @@ __PACKAGE__->add_property($_) for qw(
 
 sub config {
   my $self = shift;
-  my $c = ref($self) ? $self->{config} : 'Module::Build::Config';
+  my $c = ref($self) ? $self->{config} : Module::Build::Config->new;
   return $c->all_config unless @_;
 
   my $key = shift;
@@ -3084,7 +3084,7 @@ sub localize_dir_path {
 
 sub fix_shebang_line { # Adapted from fixin() in ExtUtils::MM_Unix 1.35
   my ($self, @files) = @_;
-  my $c = ref($self) ? $self->{config} : 'Module::Build::Config';
+  my $c = ref($self) ? $self->{config} : Module::Build::Config->new;
 
   my ($does_shbang) = $c->get('sharpbang') =~ /^\s*\#\!/;
   for my $file (@files) {
