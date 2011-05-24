@@ -50,6 +50,7 @@ my $build = ModuleBuildBuilder->new(
     'ExtUtils::CBuilder'    => 0.27, # major platform fixes
     'ExtUtils::Config'      => 0.006,
     'ExtUtils::Install'     => 0,
+    'ExtUtils::InstallPaths'=> 0.003,
     'ExtUtils::Manifest'    => 0,
     'ExtUtils::Mkbootstrap' => 0,
     'ExtUtils::ParseXS'     => 2.21, # various bug fixes

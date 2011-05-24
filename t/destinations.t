@@ -206,7 +206,7 @@ $mb->prefix(undef);
 
     my $prefix = catdir( qw( some prefix ) );
     $mb->prefix( $prefix );
-    is( $mb->{properties}{prefix}, $prefix );
+    is( $mb->prefix, $prefix );
 
     test_prefix($prefix, $mb->install_sets('site'));
 }
